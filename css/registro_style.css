@@ -1,0 +1,138 @@
+@import url(fuentes.css);
+
+body{
+    background: url(../img/udg_fuente.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.card {
+    /* display: inline; */
+    padding: 0.5rem;
+    border-radius: 1rem;
+    position: absolute;
+    height: 550px;
+    width: 600px;
+    left: calc((100% - 600px) / 2);
+    top: 5%;
+    text-align: center;
+    }
+
+.card {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1240px;
+    }
+}
+
+.logo-udg {
+    max-width: 50px;
+    height: auto;
+}
+
+#nav {
+    padding: 20px 0;
+}
+
+#nav form a {
+    font-family: 'OpenSans-Semibold';
+    font-size: 18px;
+    color: #6c85ff;
+    padding: 5px 25px;
+    border-radius: 20px;
+    border-width: 2px;
+}
+
+#nav form a.btn-reg {
+    color: #000;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.registro{
+    margin: auto;
+
+}
+
+.registro input {
+    background-color: white;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    max-width: 450px;
+    width: 100%;
+    height: 60px;
+    border: none;
+    margin: auto;
+    margin-bottom: 25px;
+    padding-left: 30px;
+    color: #000;
+}
+.registro input::-webkit-input-placeholder,
+.registro input::-moz-placeholder,
+.registro input:-ms-input-placeholder,
+.registro input:-moz-placeholder {
+    color: #999999;
+    font-family: 'OpenSans-Regular';
+    font-size: 18px;
+}
+
+.registro h4 {
+    font-family: 'Lato-Medium';
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+
+#dForm a{
+    background-image: -moz-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -webkit-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -ms-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    font-size: 18px;
+    font-family: 'OpenSans-Semibold';
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding-right: 5px;
+    text-decoration: none !important;
+}
+
+#dForm a .fa {
+    background: #fff;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    color: #37eaf9;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 5px;
+    margin-left: 15px;
+}
+
+#footer{
+    /* background: #fff; */
+    /* padding: 0.7rem; */
+    position: static;
+    margin-top: 36%;
+}
+
+p{
+    font-family: 'OpenSans-Regular';
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
