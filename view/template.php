@@ -12,182 +12,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- custom CSS -->
     <?php
-    include "view/home.php";
+        if (isset($_GET["page"])) {
+            if ($_GET["page"] == "registro" ||
+                $_GET["page"] == "studen" ||
+                $_GET["page"] == "home" ||
+                $_GET["page"] == "admin") {
+                include "view/".$_GET["page"].".php";
+            } else {
+                include "view/error404.php";
+            }
+        } else {
+            include "view/home.php";
+        }
     ?>
-
-    <!-- <div class="container-fluid gtco-features-list">
-            <div class="container">
-                <div class="row">
-                    <div class="media col-md-6 col-lg-4">
-                        <div class="oval mr-4">
-                            <img
-                                class="align-self-start"
-                                src="images/quality-results.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mb-0">Quality Results</h5>
-                            Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus
-                            velit. Duis ac quam id sapien vestibulum fermentum
-                            ac eu eros. Aliquam erat volutpat.
-                        </div>
-                    </div>
-                    <div class="media col-md-6 col-lg-4">
-                        <div class="oval mr-4">
-                            <img
-                                class="align-self-start"
-                                src="images/analytics.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mb-0">Analytics</h5>
-                            Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus
-                            velit. Duis ac quam id sapien vestibulum fermentum
-                            ac eu eros. Aliquam erat volutpat.
-                        </div>
-                    </div>
-                    <div class="media col-md-6 col-lg-4">
-                        <div class="oval mr-4">
-                            <img
-                                class="align-self-start"
-                                src="images/affordable-pricing.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mb-0">Affordable Pricing</h5>
-                            Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus
-                            velit. Duis ac quam id sapien vestibulum fermentum
-                            ac eu eros. Aliquam erat volutpat.
-                        </div>
-                    </div>
-                    <div class="media col-md-6 col-lg-4">
-                        <div class="oval mr-4">
-                            <img
-                                class="align-self-start"
-                                src="images/easy-to-use.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mb-0">Easy To Use</h5>
-                            Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus
-                            velit. Duis ac quam id sapien vestibulum fermentum
-                            ac eu eros. Aliquam erat volutpat.
-                        </div>
-                    </div>
-                    <div class="media col-md-6 col-lg-4">
-                        <div class="oval mr-4">
-                            <img
-                                class="align-self-start"
-                                src="images/free-support.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mb-0">Free Support</h5>
-                            Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus
-                            velit. Duis ac quam id sapien vestibulum fermentum
-                            ac eu eros. Aliquam erat volutpat.
-                        </div>
-                    </div>
-                    <div class="media col-md-6 col-lg-4">
-                        <div class="oval mr-4">
-                            <img
-                                class="align-self-start"
-                                src="images/effectively-increase.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mb-0">Effectively Increase</h5>
-                            Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus
-                            velit. Duis ac quam id sapien vestibulum fermentum
-                            ac eu eros. Aliquam erat volutpat.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     <footer class="container-fluid" id="footer">
         <p>
             &copy; 2019. All Rights Reserved. Design by Univercidad de Guadalajara.
         </p>
-
-        <!-- <div class="container">
-                <div class="row">
-                    
-                        <!-- <div class="row">
-                            <div class="col-6">
-                                <h4>Company</h4>
-                                <ul class="nav flex-column company-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"
-                                            >Services</a
-                                        >
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">News</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">FAQ's</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contact</a>
-                                    </li>
-                                </ul>
-                                <h4 class="mt-5">Fllow Us</h4>
-                                <ul class="nav follow-us-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link pl-0" href="#"
-                                            ><i
-                                                class="fa fa-facebook"
-                                                aria-hidden="true"
-                                            ></i
-                                        ></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"
-                                            ><i
-                                                class="fa fa-twitter"
-                                                aria-hidden="true"
-                                            ></i
-                                        ></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"
-                                            ><i
-                                                class="fa fa-google"
-                                                aria-hidden="true"
-                                            ></i
-                                        ></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"
-                                            ><i
-                                                class="fa fa-linkedin"
-                                                aria-hidden="true"
-                                            ></i
-                                        ></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                        </div> -->
-        <!-- <div class="col-12">
-                                
-                            </div> -->
-        <!-- </div>
-        </div>
-        </div> -->
     </footer>
     </body>
 

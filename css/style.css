@@ -147,7 +147,7 @@ body {
     padding-left: 8.5rem;
 }
 
-#sign-up input {
+.form-control {
     background-color: white;
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.5);
     border-radius: 50px;
@@ -159,10 +159,10 @@ body {
     padding-left: 30px;
     color: #000;
 }
-#sign-up input::-webkit-input-placeholder,
-#sign-up input::-moz-placeholder,
-#sign-up input:-ms-input-placeholder,
-#sign-up input:-moz-placeholder {
+.form-control::-webkit-input-placeholder,
+.form-control::-moz-placeholder,
+.form-control:-ms-input-placeholder,
+.form-control:-moz-placeholder {
     color: #999999;
     font-family: 'OpenSans-Regular';
     font-size: 18px;
@@ -175,9 +175,30 @@ body {
     margin-bottom: 30px;
 }
 
+.submit-button {
+    background-image: -moz-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -webkit-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -ms-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-family: 'OpenSans-Semibold';
+    color: #fff;
+    border-radius: 50px;
+    border: #06c6f9;
+    padding: .5rem 4rem .5rem 4rem;
+    text-transform: uppercase;
+    text-decoration: none !important;
+}
+
 /* --------------------- */
 /* -----  ----- */
 /* --------------------- */
+
+
+#descripcion {
+    padding-top: 100px;
+    margin-top: 0px;
+}
 
 .img-service {
     width: 40rem;
@@ -186,8 +207,7 @@ body {
 .banner_home a,
 .gtco-feature a,
 .gtco-features a,
-.gtco-news .owl-carousel .card a,
-#footer .submit-button {
+.gtco-news .owl-carousel .card a{
     background-image: -moz-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
     background-image: -webkit-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
     background-image: -ms-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
@@ -205,8 +225,7 @@ body {
 .banner_home a .fa,
 .gtco-feature a .fa,
 .gtco-features a .fa,
-.gtco-news .owl-carousel .card a .fa,
-#footer .submit-button .fa {
+.gtco-news .owl-carousel .card a .fa {
     background: #fff;
     border-radius: 50%;
     height: 32px;
@@ -509,46 +528,4 @@ body {
 
 #footer {
     padding-bottom: 20px;
-}
-
-#footer .company-nav,
-#footer .services-nav {
-    font-family: 'OpenSans-Regular';
-    font-size: 20px;
-}
-#footer .company-nav a,
-#footer .services-nav a {
-    color: #666666;
-    margin: 0;
-    padding: 0;
-}
-#footer .follow-us-nav a {
-    padding: 0 10px;
-    color: #666666;
-}
-@media (max-width: 385px) {
-    #footer .follow-us-nav a {
-        padding-right: 0;
-    }
-}
-#footer .follow-us-nav a .fa {
-    font-size: 24px;
-}
-#footer .col-12 {
-    margin-top: 90px;
-}
-#footer .col-12 p {
-    font-family: 'Lato-Regular';
-    font-size: 18px;
-    color: #999999;
-}
-@media (max-width: 991px) {
-    #footer .col-12 {
-        margin-top: 20px;
-    }
-}
-@media (max-width: 991px) {
-    #footer .col-lg-6 {
-        margin-bottom: 50px;
-    }
 }

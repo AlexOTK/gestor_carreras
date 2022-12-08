@@ -14,7 +14,7 @@
             <div id="my-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link" href="home">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#descripcion">Descripcion</a>
@@ -25,8 +25,7 @@
                 </ul>
                 <!-- Registrarce -->
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="view/registro.php"
-                        class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">Registrar</a>
+                    <a href="registro" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">Registrar</a>
                 </form>
             </div>
         </div>
@@ -46,11 +45,13 @@
                 </div>
 
                 <div class="col-lg-6" id="sign-up">
-                    <h4>Inicio de sesión</h4>
-                    <input type="text" class="form-control" placeholder="Codigo estudiantil" />
-                    <input type="email" class="form-control" placeholder="Email" />
-                    <a href="#" class="submit-button">Inicio de sesión
-                        <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <form action="model/validar_user.php" method="post">
+                        <h4>Inicio de sesión</h4>
+                        <input type="text" class="form-control" placeholder="Codigo estudiantil" name="codigo" />
+                        <input type="password" class="form-control" placeholder="Contraseña" name="pass" />
+                        <input type="submit" class="submit-button" />
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -109,7 +110,7 @@
                     <p>
                         Registrate, llena unos pequeños datos y podras gosar de estas herramientas
                     </p>
-                    <a href="#">Registrar
+                    <a href="registro">Registrar
                         <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-lg-8">

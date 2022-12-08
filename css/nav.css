@@ -1,0 +1,35 @@
+#level{
+    font-family: 'OpenSans-Semibold';
+    font-size: 18px;
+    color: #666666;
+    padding: 5px 15px !important;
+    text-transform: uppercase;
+}
+
+.name_studen .btn_sesion{
+    background: linear-gradient(-220deg, #1d3ede, #01e6f8);
+    font-family: 'OpenSans-Semibold';
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 20rem;
+    padding: 5px 15px !important;
+    text-transform: uppercase;
+}
+
+.logo-udg {
+    max-width: 50px;
+    height: auto;
+}
+
+p{
+    font-family: 'OpenSans-Regular';
+    color: #666666;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

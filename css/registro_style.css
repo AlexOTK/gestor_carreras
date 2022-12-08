@@ -61,7 +61,7 @@ body{
 
 }
 
-.registro input {
+.form-control {
     background-color: white;
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.5);
     border-radius: 50px;
@@ -74,10 +74,10 @@ body{
     padding-left: 30px;
     color: #000;
 }
-.registro input::-webkit-input-placeholder,
-.registro input::-moz-placeholder,
-.registro input:-ms-input-placeholder,
-.registro input:-moz-placeholder {
+.form-control::-webkit-input-placeholder,
+.form-control::-moz-placeholder,
+.form-control:-ms-input-placeholder,
+.form-control:-moz-placeholder {
     color: #999999;
     font-family: 'OpenSans-Regular';
     font-size: 18px;
@@ -88,6 +88,21 @@ body{
     font-size: 24px;
     color: rgb(0, 0, 0);
     margin-bottom: 30px;
+}
+
+.submit-button {
+    background-image: -moz-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -webkit-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -ms-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-family: 'OpenSans-Semibold';
+    color: #fff;
+    border-radius: 50px;
+    border: #06c6f9;
+    padding: .5rem 4rem .5rem 4rem;
+    text-transform: uppercase;
+    text-decoration: none !important;
 }
 
 #dForm a{
@@ -118,10 +133,8 @@ body{
 }
 
 #footer{
-    /* background: #fff; */
-    /* padding: 0.7rem; */
-    position: static;
-    margin-top: 36%;
+    /* position: static; */
+    margin-top: 50rem;
 }
 
 p{
