@@ -1,3 +1,7 @@
+<?php
+// session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +28,7 @@
         } else {
             include "view/home.php";
         }
-    ?>
+?>
     <footer class="container-fluid" id="footer">
         <p>
             &copy; 2019. All Rights Reserved. Design by Univercidad de Guadalajara.

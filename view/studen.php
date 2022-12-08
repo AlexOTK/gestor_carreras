@@ -1,6 +1,34 @@
 <?php
-$name = "Alexis Daniel Salazar Villegas";
-$level = "8 Semestre";
+// if (!isset($_SESSION["ingresoStuden"])) {
+//     echo '<script>window.location = "studen";</script>';
+//     return;
+// } else {
+//     if ($_SESSION["ingresoStuden"] != "ok") {
+//         echo '<script>window.location = "home";</script>';
+//     }
+// }
+
+include("model/config_FB.php");
+include("model/firebase_DB.php");
+$db = new firebase_DB($databaseURL);
+
+$data = $db->retrieve("alumnos");
+$data = json_decode($data, 1);
+
+$dname = "";
+$dcodi = "";
+
+if (is_array($data)) {
+    foreach ($data as $key => $alumnos) {
+        $cd = $data [$key] ["codigo"];
+        $name = $data [$key] ["nombre"];
+
+        if ($_GET["studen"] == $cd) {
+            $dname = $name;
+            $dcodi = $cd;
+        }
+    }
+}
 ?>
 
 <link rel="stylesheet" href="css/studen_style.css" />
@@ -20,7 +48,7 @@ $level = "8 Semestre";
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <label for="level" class="level" style="padding: 1rem 0 0 0;">
-                            <h3 id="level"><?php echo $level ?></h3>
+                            <h3 id="level"><?php echo $dcodi?></h3>
                         </label>
                     </li>
                 </ul>
@@ -30,7 +58,7 @@ $level = "8 Semestre";
                         <div class="dropdown">
                             <button type="button" class="btn btn_sesion text-uppercase dropdown-toggle"
                                 data-toggle="dropdown">
-                                <?php echo $name ?>
+                                <?php echo $dname?>
                             </button>
                             <div class="dropdown-menu">
                                 <h5 class="dropdown-header">Herramientas</h5>
