@@ -49,10 +49,6 @@
                         <h4>Inicio de sesión</h4>
                         <input type="text" class="form-control" placeholder="Codigo estudiantil" name="codigo" />
                         <input type="password" class="form-control" placeholder="Contraseña" name="pass" />
-                        <?php
-                        // $ingreso = new Ingreso();
-                        // $ingreso -> ctrIngreso();
-                        ?>
                         <input type="submit" class="submit-button" />
 
                     </form>

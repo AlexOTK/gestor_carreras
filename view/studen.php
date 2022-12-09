@@ -1,12 +1,4 @@
 <?php
-// if (!isset($_SESSION["ingresoStuden"])) {
-//     echo '<script>window.location = "studen";</script>';
-//     return;
-// } else {
-//     if ($_SESSION["ingresoStuden"] != "ok") {
-//         echo '<script>window.location = "home";</script>';
-//     }
-// }
 
 include("model/config_FB.php");
 include("model/firebase_DB.php");
@@ -61,16 +53,11 @@ if (is_array($data)) {
                                 <?php echo $dname?>
                             </button>
                             <div class="dropdown-menu">
-                                <h5 class="dropdown-header">Herramientas</h5>
-                                <a class="dropdown-item" href="#">Horario</a>
-                                <a class="dropdown-item" href="#">Materias</a>
-                                <a class="dropdown-item" href="#">Creditos</a>
                                 <h5 class="dropdown-header">Cuenta</h5>
-                                <a class="dropdown-item" href="#">Cerrar sesion</a>
+                                <a class="dropdown-item" href="home">Cerrar sesion</a>
                             </div>
                         </div>
                     </div>
-                    <!-- <a href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase"></a> -->
                 </form>
             </div>
         </div>
@@ -92,29 +79,51 @@ if (is_array($data)) {
                 </tr>
             </thead>
             <tr>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td></td>
-                <td></td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-            </tr>
-            <tr>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-            </tr>
-            <tr>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-                <td>Matematicas Discretas<br>Jose Sepulveda<br>C4<br><br>8:00 - 10:00</td>
-            </tr>
-            <tbody>
-                <?php  $ingresarDatos ?>
-            </tbody>
+                <?php
+        $data = $db->retrieve("materias");
+$data = json_decode($data, 1);
+
+$dmateria = "";
+$ddocente = "";
+$dedificio = "";
+$daula = "";
+$dhe = "";
+$dhs = "";
+$b = 0;
+$cont = 0;
+// echo'<script>
+        //                     if(window.history.replaceState){
+        //                         window.history.replaceState(null,null,window.location.href);
+        //                     }';
+if (is_array($data)) {
+    foreach ($data as $key => $materias) {
+        $dmateria  = $data [$key] ["materia"];
+        $ddocente  = $data [$key] ["docente"];
+        $dedificio  = $data [$key] ["edificio"];
+        $daula  = $data [$key] ["aula"];
+        $dhe  = $data [$key] ["hEntrada"];
+        $dhs  = $data [$key] ["hSalida"];
+        $dia = $data [$key] ["dia"];
+
+        echo '<td>'.$dmateria.'<br>'.$ddocente.'<br>'.$dedificio.$daula.'<br><br>'.$dhe.':00
+                - '.$dhs.':00</td>';
+
+
+        $cont++;
+        if ($cont == 5) {
+            echo '</tr>';
+            $cont = 0;
+            $b++;
+            if ($b == 4) {
+                $b=0;
+                break;
+            }
+        }
+    }
+}?>
+                <tbody>
+                    <?php  $ingresarDatos ?>
+                </tbody>
         </table>
     </div>
 
@@ -141,9 +150,6 @@ if (is_array($data)) {
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title">Matematicas Discretas</h3>
-                                    <p class="card-text">
-                                        Podras acceder al horario de tus clases del semestre.
-                                    </p>
                                 </div>
                             </div>
                             <div class="card text-center">
@@ -154,11 +160,6 @@ if (is_array($data)) {
                                     <h3 class="card-title">
                                         Seminario de Proyecto Final
                                     </h3>
-                                    <p class="card-text">
-                                        No vuelvas a dejar materias en deudas, te notificaremos si alguna clase la
-                                        llegues a
-                                        deber
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -169,10 +170,6 @@ if (is_array($data)) {
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title">APTO VIII</h3>
-                                    <p class="card-text">
-                                        Dale un seguimineto a lasmmaterias que vas cursando y las que dejastes
-                                        pendientes.
-                                    </p>
                                 </div>
                             </div>
                             <div class="card text-center">
@@ -183,10 +180,6 @@ if (is_array($data)) {
                                     <h3 class="card-title">
                                         Fundamentos de auditoria informatica
                                     </h3>
-                                    <p class="card-text">
-                                        Checa cuantos creditos te hacen falta para culminar tu acreditacion de tu
-                                        carrera.
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -201,9 +194,6 @@ if (is_array($data)) {
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title">Tecnologias de la comunicacion</h3>
-                                    <p class="card-text">
-                                        Podras acceder al horario de tus clases del semestre.
-                                    </p>
                                 </div>
                             </div>
                             <div class="card text-center">
@@ -214,11 +204,6 @@ if (is_array($data)) {
                                     <h3 class="card-title">
                                         Seminario de propiedad intelectual
                                     </h3>
-                                    <p class="card-text">
-                                        No vuelvas a dejar materias en deudas, te notificaremos si alguna clase la
-                                        llegues a
-                                        deber
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -229,10 +214,6 @@ if (is_array($data)) {
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title">Tecnologia cliente servidor</h3>
-                                    <p class="card-text">
-                                        Dale un seguimineto a lasmmaterias que vas cursando y las que dejastes
-                                        pendientes.
-                                    </p>
                                 </div>
                             </div>
                             <div class="card text-center">
@@ -243,10 +224,6 @@ if (is_array($data)) {
                                     <h3 class="card-title">
                                         Sistemas de Control
                                     </h3>
-                                    <p class="card-text">
-                                        Checa cuantos creditos te hacen falta para culminar tu acreditacion de tu
-                                        carrera.
-                                    </p>
                                 </div>
                             </div>
                         </div>

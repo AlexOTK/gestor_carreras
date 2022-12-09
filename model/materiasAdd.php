@@ -17,6 +17,7 @@ $insert = $db->insert("materias", [
     "dia"    => $_POST['dia'],
     "seccion"    => $_POST['seccion']
 ]);
+
 sleep(1);
 ?>
 <div class="container-fluid">

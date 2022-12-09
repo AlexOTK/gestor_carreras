@@ -9,7 +9,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4"><input type="text" class="form-control" placeholder="ARC" name="arc" /></td>
+                        <td colspan="4"><input type="text" class="form-control" placeholder="NRC" name="arc" /></td>
                         <td colspan="4"><input type="text" class="form-control" placeholder="Creditos"
                                 name="creditos" /></td>
                         <td colspan="4"><input type="text" class="form-control" placeholder="Edificio"
